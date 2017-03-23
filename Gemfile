@@ -56,7 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Config(config/settings/yml)
 gem 'config'
 # TemplateEngine
-gem 'slim-rails'
+# gem 'slim-rails'
 # CSS Framework
 gem 'materialize-sass'
 # OAuth
