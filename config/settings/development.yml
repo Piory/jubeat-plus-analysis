@@ -1,4 +1,4 @@
-ominauth:
+omniauth:
   google_oauth2:
     client_id: '21238639178-8o3l7qbrht693srdbbah03bni1011ip1.apps.googleusercontent.com'
     client_secret: 'qyOEs4MjVcxO78iQ_sA4AJHv'
