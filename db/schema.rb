@@ -13,7 +13,11 @@
 ActiveRecord::Schema.define(version: 20170323045009) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "provider"
     t.string   "email",                  default: "", null: false
+    t.string   "name"
+    t.string   "uid"
+    t.string   "token"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -25,10 +29,6 @@ ActiveRecord::Schema.define(version: 20170323045009) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "token"
-    t.string   "meta"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

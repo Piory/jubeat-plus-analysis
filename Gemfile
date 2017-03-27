@@ -53,6 +53,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ######## add ########
+# YARD(Doc)
+gem 'yard'
 # Config(config/settings/yml)
 gem 'config'
 # TemplateEngine
