@@ -1,0 +1,26 @@
+<nav
+<% if user_signed_in? %>
+class="side-var-padding-left"
+<% end %>
+>
+  <div class="nav-wrapper">
+    <a href="<%= user_signed_in? ? user_root_url : root_url %>" class="brand-logo"><i class="material-icons left">apps</i>JubeatPlusAnalysis</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <%= material_icon.settings %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <%= icon('sign-out', class: 'fa-2x') %>
+            <% end %>
+          </li>
+      <% else %>
+          <li><a><%= link_to "Sign up", new_user_registration_path %></a></li>
+          <li><a><%= link_to "Login", new_user_session_path %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

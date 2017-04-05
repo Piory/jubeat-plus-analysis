@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JubeatPlusAnalysis</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>JubeatPlusAnalysis</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<body>
+<!-- Header -->
+<%= render 'commons/header' %>
 
-    <%= yield %>
-  </body>
+<!-- SideVar -->
+<% if user_signed_in? %>
+    <%= render 'commons/sidevar' %>
+<% end %>
+
+<!-- Main Contents -->
+<main class="container
+  <% if user_signed_in? %>
+    side-var-padding-left
+  <% end %>
+">
+
+  <% if notice %>
+      <div class="notice">
+        <div class="row">
+          <div class="col s12">
+            <div class="card-panel green lighten-3">
+              <%= notice %>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% elsif alert %>
+      <div class="alert">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <div class="card-panel red lightten-3">
+                <%= alert %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+  <%= yield %>
+</main>
+</body>
 </html>
