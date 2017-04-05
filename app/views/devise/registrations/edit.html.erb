@@ -7,7 +7,7 @@
       <div class="col s12 input-field">
         <%= material_icon.email.css_class('prefix') %>
         <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, autofocus: true, class: 'validate' %>
       </div>
     </div>
 
@@ -21,7 +21,7 @@
         <%= f.label :password do %>
             Password (leave blank if you don't want to change it)
         <% end %>
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class: 'validate' %>
         <% if @minimum_password_length %>
             <br/>
             <em><%= @minimum_password_length %> characters minimum</em>
@@ -33,7 +33,7 @@
       <div class="col s12 input-field">
         <%= material_icon.vpn_key.css_class('prefix') %>
         <%= f.label :password_confirmation %><br/>
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'validate' %>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
         <%= f.label :current_password do %>
             Password (we need your current password to confirm your changes)
         <% end %>
-        <%= f.password_field :current_password, autocomplete: "off" %>
+        <%= f.password_field :current_password, autocomplete: "off", class: 'validate' %>
       </div>
     </div>
 

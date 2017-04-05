@@ -1,16 +1,29 @@
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <div class="row">
+      <div class="col s12 input-field">
+        <%= material_icon.email.css_class('prefix') %>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: 'validate' %>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
+    <div class="row">
+      <div class="col s12">
+      <%= f.button class: 'btn', type: 'submit' do %>
+          Send me reset password instructions<%= material_icon.send.css_class('right') %>
+      <% end %>
+      </div>
+    </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="row">
+  <div class="col s12">
+    <%= link_to :back, class: 'btn waves-effect waves-light' do %>
+        Back<%= material_icon.arrow_back.css_class('left') %>
+    <% end %>
+  </div>
+</div>
