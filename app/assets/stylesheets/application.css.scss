@@ -12,4 +12,32 @@
  *
  *= require_tree .
  *= require_self
+ *= require material_icons
  */
+@import "materialize/components/color";
+
+$primary-color: color("amber", "darken-1") !default;
+@import 'materialize';
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+main.side-var-padding-left, nav.side-var-padding-left {
+  padding-left: 300px;
+}
+
+input {
+  outline: 0 !important;
+}
+
+.btn {
+  text-transform: none;
+}
+
+.row.padding-top {
+  padding-top: 100px;
+}
+
+.fa {
+  display: inherit !important;
+}
