@@ -61,6 +61,8 @@ gem 'config'
 # gem 'slim-rails'
 # CSS Framework
 gem 'materialize-sass'
+gem 'material_icons'
+gem 'font-awesome-sass'
 # OAuth
 gem 'devise'
 gem 'omniauth'
